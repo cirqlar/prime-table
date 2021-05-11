@@ -21,7 +21,7 @@ function PrimeProductTable({ numberOfPrimes: np = 10 }) {
             <th></th>
             {/* loop over primes to generate table header cells */}
             {primes.map((prime) => (
-              <th key={prime}>{prime}</th>
+              <th key={prime} data-testid="columnHeader">{prime}</th>
             ))}
           </tr>
         </thead>
@@ -29,7 +29,7 @@ function PrimeProductTable({ numberOfPrimes: np = 10 }) {
           {/* loop over primes to generate table rows */}
           {primes.map((prime) => (
             <tr key={prime}>
-              <td>{prime}</td>
+              <td data-testid="rowLeader">{prime}</td>
               {/* loop over primes to generate row cells */}
               {primes.map((multiplyBy) => (
                 <td key={multiplyBy}>{prime * multiplyBy}</td>
