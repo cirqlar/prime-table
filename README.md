@@ -41,3 +41,4 @@ To build the project for production, use:
 ```bash
 npm run build
 ```
+Production build will be found in the `/docs` folder
