@@ -1,4 +1,4 @@
-import Table from "../components/Table";
+import PrimeProductTable from "../components/PrimeProductTable";
 
 import styles from "./App.module.css";
 
@@ -8,7 +8,7 @@ function App() {
       <div>
         <h1>Products of Primes</h1>
       </div>
-      <Table />
+      <PrimeProductTable />
     </div>
   );
 }

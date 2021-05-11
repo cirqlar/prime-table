@@ -4,9 +4,11 @@ import getPrimes from "../lib/prime";
 
 import styles from "./Table.module.css";
 
-function Table() {
-  const [numberOfPrimes] = useState(10);
+function PrimeProductTable({ numberOfPrimes: np = 10 }) {
+  const [numberOfPrimes] = useState(np);
 
+  // Memoize result to ensure function isn't 
+  // called unless number changes
   const primes = React.useMemo(() => {
     return getPrimes(numberOfPrimes);
   }, [numberOfPrimes]);
@@ -17,15 +19,18 @@ function Table() {
         <thead>
           <tr>
             <th></th>
+            {/* loop over primes to generate table header cells */}
             {primes.map((prime) => (
               <th key={prime}>{prime}</th>
             ))}
           </tr>
         </thead>
         <tbody>
+          {/* loop over primes to generate table rows */}
           {primes.map((prime) => (
             <tr key={prime}>
               <td>{prime}</td>
+              {/* loop over primes to generate row cells */}
               {primes.map((multiplyBy) => (
                 <td key={multiplyBy}>{prime * multiplyBy}</td>
               ))}
@@ -37,4 +42,4 @@ function Table() {
   );
 }
 
-export default Table;
+export default PrimeProductTable;
